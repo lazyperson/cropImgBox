@@ -1,6 +1,3 @@
----
-title: Amaze UI CropImgBox API ап╠М
----
 
 # CropImgBox API
 ---

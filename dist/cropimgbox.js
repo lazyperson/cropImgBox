@@ -1,8 +1,13 @@
 ﻿/*
  cropimgbox.js
- 注：基于cropbox改编
+ ------------------------------------------------------------
+ |  Note:暂时提供了除原图外的2种效果（灰化、高亮高对比），可通过修改
+ |  cvtColor、brightnessContrast函数在此基础上渐变多种效果。
+ -------------------------------------------------------------
+ *********注：基于cropbox修改*************
  Version: 1.0.0
  Author: lazyperson
+ QQ: 564981089
  Website: https://github.com/lazyperson
  */
 (function (factory) {
