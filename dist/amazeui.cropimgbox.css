@@ -1,0 +1,11 @@
+﻿.cropimgbox {width:400px;margin:0 auto;padding:10px;position:relative;}
+.cropimgbox p {line-height:12px;line-height:0px;height:0px;margin:10px;color:#bbb;}
+.cropimgbox-action {width:100%;height:30px;margin:10px 0;}
+.cropimgbox-cropped {width:400px;border:1px #ddd solid;height:470px;padding:4px;box-shadow:0px 0px 12px #ddd;text-align:center;}
+.cropimgbox-imageBox {position:relative;height:400px;width:400px;border:1px solid #aaa;background:#fff;overflow:hidden;background-repeat:no-repeat;cursor:move;box-shadow:4px 4px 12px #B0B0B0;}
+.cropimgbox-thumbBox {position:absolute;top:50%;left:50%;width:200px;height:200px;margin-top:-100px;margin-left:-100px;box-sizing:border-box;border:1px solid rgb(102,102,102);box-shadow:0 0 0 1000px rgba(0,0,0,0.5);background:none repeat scroll 0% 0% transparent;}
+.cropimgbox-spinner {position:absolute;top:0;left:0;bottom:0;right:0;text-align:center;line-height:400px;color:#2F2A2A;background:rgba(213,211,211,0.7);}
+.cropimgbox-contentarea {width:100px;overflow:hidden;margin:0 auto;position:relative;float:left;text-align:center;font-size:1.2rem;height:28px;line-height:28px;vertical-align:middle;margin-top:1px;background-color:#e6e6e6;border:1px solid #D9D9D9;}
+.cropimgbox-contentarea:hover {background-color:#d9d9d9;}
+.cropimgbox-contentarea label {width:100%;height:100%;display:block;}
+.cropimgbox-contentarea input[type=file] {width:100px;height:28px;background:#333;margin:0 auto;position:absolute;top:0;left:0;opacity:0;filter:alpha(opacity=0);z-index:2;}

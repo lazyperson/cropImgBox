@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="图片裁剪插件">
+    <meta name="keywords" content="图片裁剪，crop,Image">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Amaze UI CorpImgBox</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link href="amazeui.css" rel="stylesheet" />
+    <link href="amazeui.cropimgbox.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script src="cropimgbox.js"></script>
+    <script type="text/javascript">
+        (function ($) {
+            $(function () {
+                var options =
+                    {
+                        thumbBox: '.cropimgbox-thumbBox',
+                        spinner: '.cropimgbox-spinner',
+                        imgSrc: ''
+                    }
+                var cropper = $('.cropimgbox-imageBox').cropimgbox(options);
+                var img = "";
+                $('#upload-file').on('change', function () {
+                    var reader = new FileReader();
+                    reader.onload = function (e) {
+                        options.imgSrc = e.target.result;
+                        cropper = $('.cropimgbox-imageBox').cropimgbox(options);
+                        getImg();
+                    }
+                    reader.readAsDataURL(this.files[0]);
+                    this.files.length = 0;
+                })
+
+                function getImg() {
+                    cropper.getDataURL(function (img) {
+                        $('.cropimgbox-cropped').html('');
+                        $('.cropimgbox-cropped').append('<img src="' + img[0] + '" align="absmiddle" style="width:128px;margin-top:4px;border-radius:128px;box-shadow:0px 0px 12px #7E7E7E;"><p>128px*128px 原图</p>');
+                        $('.cropimgbox-cropped').append('<img src="' + img[1] + '" align="absmiddle" style="width:128px;margin-top:4px;border-radius:128px;box-shadow:0px 0px 12px #7E7E7E;"><p>128px*128px 灰化</p>');
+                        $('.cropimgbox-cropped').append('<img src="' + img[2] + '" align="absmiddle" style="width:128px;margin-top:4px;border-radius:128px;box-shadow:0px 0px 12px #7E7E7E;"><p>128px*128px 高亮高对比</p>');
+                    });
+                }
+
+                $(".cropimgbox-imageBox").on("mouseup", function () {
+                    getImg();
+                });
+
+                $('#btnZoomIn').on('click', function () {
+                    cropper.zoomIn();
+                })
+
+                $('#btnZoomOut').on('click', function () {
+                    cropper.zoomOut();
+                })
+            })
+        })(jQuery);
+    </script>
+</head>
+<body>
+    <div class="cropimgbox">
+        <div class="cropimgbox-imageBox">
+            <div class="cropimgbox-thumbBox"></div>
+            <div class="cropimgbox-spinner" style="display: none"></div>
+        </div>
+
+        <div class="cropimgbox-action">
+            <div class="am-btn-group am-btn-group-xs">
+                <button type="button" id="btnZoomIn" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-plus"></span> 放大</button>
+                <button type="button" id="btnZoomOut" class="am-btn am-btn-default am-btn-xs am-text-secondary"><span class="am-icon-minus"></span> 缩小</button>
+            </div>
+            <div class="cropimgbox-contentarea">
+                <a href="javascript:void(0)" class="cropimgbox-upload-img">
+                    <label for="cropimgbox-upload-file">选择图片...</label>
+                </a>
+                <input type="file" class="" name="cropimgbox-upload-file" id="upload-file" />
+            </div>
+        </div>
+        <div class="cropimgbox-cropped"></div>
+    </div>
+</body>
+</html>
