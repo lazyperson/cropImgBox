@@ -32,6 +32,9 @@ cropper.zoomIn();
 
 // narrow image
 cropper.zoomOut();
+
+//converted base64 to Blod for upload files
+cropper.getBlob(i);
 ```
 
 方法        | 参数      | 描述
@@ -40,3 +43,4 @@ cropimgbox      | options : object | 初始化 cropimgbox
 getDataURL    | callback  | 获取截取变换后的图像base64数组
 zoomIn  |  | 放大
 zoomOut  | | 缩小
+getBlob  | i:int | 将base64转化为Blob,i为数组的下标

@@ -80,7 +80,7 @@
                     }
 
 
-                    function imgTrans(iCanvas, url, key, call) {
+                    function imgTrans(iCanvas, url, key, callback) {
                         var _th = this;
                         var canvas = iCanvas,
                         iCtx = canvas.getContext("2d"),
@@ -108,7 +108,7 @@
                             imageData.data.set(_imgMat.data);
                             return imageData;
                         },
-                        render = function (key, call) {
+                        render = function (key, callback) {
                             var img = new Image();
                             img.onload = function () {
                                 var myMat = imread(img);
@@ -122,13 +122,12 @@
                                     var newIamgeData = RGBA2ImageData(newImage);
                                     iCtx.putImageData(newIamgeData, 0, 0);
                                 }
-                                call();
+                                callback();
                             };
                             img.src = url;
                         };
 
-                        render(key, call);
-
+                        render(key, callback);
                     }
 
 
@@ -295,7 +294,7 @@
                 obj.state.dragable = false;
             },
             zoomImage = function (e) {
-                e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0 ? obj.ratio *= options.expandRatio : obj.ratio *=options.narrowRatio;
+                e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0 ? obj.ratio *= options.expandRatio : obj.ratio *= options.narrowRatio;
                 setBackground();
             }
 
