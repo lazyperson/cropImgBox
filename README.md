@@ -1,7 +1,7 @@
 ﻿# Amaze UI CropImgBox
 ---
 
-[CropImgBox 插件](https://github.com/kenwheeler/slick) Amaze UI 样式移植。
+[CropImgBox 插件](https://github.com/lazyperson/cropImgBox) Amaze UI 样式移植。
 
 - [使用示例](https://github.com/lazyperson/cropImgBox/tree/master/example)
 - [API 文档](https://github.com/lazyperson/cropImgBox/blob/master/docs/api.md)
