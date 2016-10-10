@@ -3,7 +3,7 @@
 
 [CropImgBox 插件](https://github.com/lazyperson/cropImgBox) Amaze UI 样式移植。
 
-- [使用示例](https://github.com/lazyperson/cropImgBox/tree/master/example)
+- [使用示例](https://lazyperson.github.io/cropImgBox/example/)
 - [API 文档](https://github.com/lazyperson/cropImgBox/blob/master/docs/api.md)
 
 **使用说明：**
