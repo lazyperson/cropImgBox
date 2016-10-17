@@ -11,7 +11,7 @@
 1. 获取 Amaze UI CropImgBox
 
   - [直接下载](https://github.com/lazyperson/cropImgBox.git)
-  - 使用 NPM: `npm install cropImgBox`
+  - 使用 NPM: `npm install cropimgbox`
 
 2. 在 Amaze UI 样式之后引入 CropImgBox 样式（`dist` 目录下的 CSS）：
 
